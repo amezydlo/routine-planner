@@ -15,6 +15,11 @@ RoutinePlanner is an application for anyone who wants to plan and manage their d
 
 ---
 
+## TODO
+- [x] Prepare docker for postgresql
+- [x] Test database connection
+- [ ] Create domain model
+
 ## Overview
 
 ## Features
