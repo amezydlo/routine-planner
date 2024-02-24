@@ -11,7 +11,7 @@ public class Routine_Day {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
-    @Column(name = "day_number")
+    @Column(name = "day_number", nullable = false)
     private int dayNumber;
 
 
@@ -20,5 +20,39 @@ public class Routine_Day {
     @JoinTable(name = "routine_day_activities",
             joinColumns = @JoinColumn(name = "tag_time"),
             inverseJoinColumns = @JoinColumn(name = "activity"))
-    private HashMap<Timestamp, ActivityBlock> activities;
+    private HashMap<Timestamp, ActivityBlock> activities = new HashMap<>();
+
+
+    @ManyToOne
+    @JoinColumn(name = "routine_id", nullable = false)
+    private Routine routine;
+
+
+    public Routine_Day() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public int getDayNumber() {
+        return dayNumber;
+    }
+
+    public void setDayNumber(int dayNumber) {
+        this.dayNumber = dayNumber;
+    }
+
+
+    public Routine getRoutine() {
+        return routine;
+    }
+
+    public void setRoutine(Routine routine) {
+        this.routine = routine;
+    }
 }

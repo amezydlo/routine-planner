@@ -14,7 +14,7 @@ public class Activity {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "tag_id", referencedColumnName = "id")
+    @JoinColumn(name = "tag_id", referencedColumnName = "id", nullable = false)
     private Tag tag;
 
     @Column(name = "duration", nullable = false)
@@ -23,7 +23,7 @@ public class Activity {
 
 
     @ManyToOne
-    @JoinColumn(name="activity_block_id", referencedColumnName = "id")
+    @JoinColumn(name="activity_block_id", referencedColumnName = "id", nullable = false)
     private ActivityBlock activityBlock;
 
     public Activity() {
