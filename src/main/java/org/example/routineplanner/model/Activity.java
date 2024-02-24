@@ -14,13 +14,17 @@ public class Activity {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "tag_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "tag_id", referencedColumnName = "id")
     private Tag tag;
 
     @Column(name = "duration", nullable = false)
     @Check(name = "duration_positive_check", constraints = "duration > 0")
     private Duration duration;
 
+
+    @ManyToOne
+    @JoinColumn(name="activity_block_id", referencedColumnName = "id")
+    private ActivityBlock activityBlock;
 
     public Activity() {
 
