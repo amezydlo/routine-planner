@@ -1,16 +1,20 @@
 package org.example.routineplanner.model;
 
 import jakarta.persistence.*;
+import org.example.routineplanner.TagDto;
+
 
 @Entity
 @Table(name = "tag")
 public class Tag {
     // maybe name should be PK ?
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "my")
+    @SequenceGenerator(name = "my", allocationSize = 50)
+    @Column(name = "id", nullable = false, unique = true)
+    private int id;
 
-    @Column(name ="name", nullable = false, unique = true)
+    @Column(name = "name", nullable = false, unique = true)
     private String name;
 
     @Column(name = "color_rgb", nullable = false)
@@ -19,11 +23,21 @@ public class Tag {
     @Column(name = "icon_id", nullable = false)
     private int iconId;
 
-    public Long getId() {
+    public Tag() {
+
+    }
+
+    public Tag(TagDto tagDto) {
+        name = tagDto.name();
+        color = tagDto.color();
+        iconId = tagDto.icon();
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
