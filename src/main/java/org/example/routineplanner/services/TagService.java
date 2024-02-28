@@ -1,6 +1,7 @@
 package org.example.routineplanner.services;
 
 
+import jakarta.persistence.EntityNotFoundException;
 import org.example.routineplanner.model.Tag;
 import org.example.routineplanner.repositories.TagRepository;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,7 @@ public class TagService {
     }
 
     public Tag create(Tag tag) {
+        // TODO check if tag already exists
         return tagRepository.save(tag);
     }
 
@@ -34,7 +36,7 @@ public class TagService {
                     currentTag.setName(newTag.getName());
                     return tagRepository.save(currentTag);
                 })
-                .orElseThrow(() -> new NoSuchElementException("Noone found"));
+                .orElseThrow(() -> new EntityNotFoundException("Tag with UUID: " + id + " does not exist"));
     }
 
     public void delete(UUID id) {

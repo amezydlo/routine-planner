@@ -1,0 +1,6 @@
+## TODO
+
+Chyba trzeba będzie jednak przemyśleć kwestię kont użytkowników wcześniej...
+Obecnie założenie jest takie, że jest to aplikacja tylko dla 1 osoby (bez sensu xd).
+
+Np. każdy widzi wszystkie tagi, routyny itp...

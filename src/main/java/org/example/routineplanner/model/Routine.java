@@ -18,9 +18,13 @@ public class Routine {
     private String name;
 
 
+    @ManyToOne(optional = false)
+    private User user;
+
     @OneToMany(mappedBy = "routine")
     @OrderBy(value = "dayNumber")
     private List<Routine_Day> routineDays = new ArrayList<>();
+
 
     public Routine() {
     }

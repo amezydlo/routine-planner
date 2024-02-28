@@ -17,14 +17,13 @@ RoutinePlanner is an application for anyone who wants to plan and manage their d
 ## TODO
 - [x] Prepare docker for postgresql
 - [x] Test database connection
-- [ ] Create domain model
+- [x] Create domain model
+- [ ] Add Users
+- [ ] Modify controllers
 
 ## Overview
 
 ## Features
-
-## Tasks
-- [ ] Update this document when planning phase is over
 
 ## Technologies
 
