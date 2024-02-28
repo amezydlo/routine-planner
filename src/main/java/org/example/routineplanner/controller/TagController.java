@@ -13,30 +13,37 @@ import java.util.UUID;
 @RequestMapping("/tags")
 public class TagController {
 
-    private final TagService service;
+    private final TagService tagService;
 
-    public TagController(TagService service) {
-        this.service = service;
+    public TagController(TagService tagService) {
+        this.tagService = tagService;
     }
 
 
     @GetMapping()
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
     public List<Tag> getAllTags() {
-        return service.getAllTags();
+        return tagService.getAll();
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
     public Tag createTag(@RequestBody Tag tag) {
-        return service.createTag(tag);
+        return tagService.create(tag);
     }
 
 
     @PutMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public void updateTag(@PathVariable UUID id, @RequestBody Tag tag) {
-        service.updateTag(tag);
+    public Tag updateTag(@PathVariable UUID id, @RequestBody Tag tag) {
+        return tagService.update(id, tag);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteTag(@PathVariable UUID id) {
+        tagService.delete(id);
     }
 
 }
