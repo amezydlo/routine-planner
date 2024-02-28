@@ -1,7 +1,6 @@
 # RoutinePlanner
 RoutinePlanner is an application for anyone who wants to plan and manage their daily routines in a fast and easy way!
 
->***Disclaimer***: This project has not started yet!
 
 
 ## Table of contents
@@ -43,4 +42,4 @@ RoutinePlanner is an application for anyone who wants to plan and manage their d
 
 ## Project Status
 
->The project is currently in the planning phase
+>The project is currently in the developing phase
