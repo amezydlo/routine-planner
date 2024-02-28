@@ -3,16 +3,17 @@ package org.example.routineplanner.model;
 import jakarta.persistence.*;
 import org.example.routineplanner.TagDto;
 
+import java.util.UUID;
+
 
 @Entity
 @Table(name = "tag")
 public class Tag {
     // maybe name should be PK ?
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "my")
-    @SequenceGenerator(name = "my", allocationSize = 50)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "id", nullable = false, unique = true)
-    private int id;
+    private UUID id;
 
     @Column(name = "name", nullable = false, unique = true)
     private String name;
@@ -33,11 +34,11 @@ public class Tag {
         iconId = tagDto.icon();
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

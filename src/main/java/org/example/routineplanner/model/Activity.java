@@ -5,13 +5,14 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.Check;
 
 import java.time.Duration;
+import java.util.UUID;
 
 @Entity
 @Table(name = "activity")
 public class Activity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     @ManyToOne
     @JoinColumn(name = "tag_id", referencedColumnName = "id", nullable = false)
@@ -30,11 +31,12 @@ public class Activity {
 
     }
 
-    public Long getId() {
+
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

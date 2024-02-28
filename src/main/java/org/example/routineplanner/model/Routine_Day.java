@@ -4,12 +4,13 @@ import jakarta.persistence.*;
 
 import java.sql.Timestamp;
 import java.util.HashMap;
+import java.util.UUID;
 
 @Entity
 public class Routine_Day {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     @Column(name = "day_number", nullable = false)
     private int dayNumber;
@@ -31,11 +32,11 @@ public class Routine_Day {
     public Routine_Day() {
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

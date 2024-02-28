@@ -1,7 +1,6 @@
 package org.example.routineplanner.services;
 
 
-import org.example.routineplanner.TagDto;
 import org.example.routineplanner.model.Tag;
 import org.example.routineplanner.repositories.TagRepository;
 import org.springframework.stereotype.Service;
@@ -21,10 +20,8 @@ public class TagService {
         return (List<Tag>) repository.findAll();
     }
 
-    public Tag createTag(TagDto tag) {
-        System.out.println(tag);
-        Tag t = new Tag(tag);
-        return repository.save(t);
+    public Tag createTag(Tag tag) {
+        return repository.save(tag);
     }
 
     public void updateTag(Tag tag) {
