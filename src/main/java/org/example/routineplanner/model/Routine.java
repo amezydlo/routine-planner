@@ -1,6 +1,8 @@
 package org.example.routineplanner.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -19,10 +21,12 @@ public class Routine {
 
 
     @ManyToOne(optional = false)
+    @JsonIgnoreProperties("routines")
     private User user;
 
     @OneToMany(mappedBy = "routine")
     @OrderBy(value = "dayNumber")
+    @JsonManagedReference
     private List<Routine_Day> routineDays = new ArrayList<>();
 
 

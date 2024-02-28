@@ -1,5 +1,6 @@
 package org.example.routineplanner.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
@@ -26,6 +27,7 @@ public class Routine_Day {
 
     @ManyToOne
     @JoinColumn(name = "routine_id", nullable = false)
+    @JsonBackReference
     private Routine routine;
 
 

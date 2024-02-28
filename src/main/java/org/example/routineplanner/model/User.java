@@ -1,6 +1,7 @@
 package org.example.routineplanner.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -21,9 +22,34 @@ public class User {
     private String userTag;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnoreProperties("user") // TODO warning
     private List<Routine> routines = new ArrayList<>();
 
     public User() {
 
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUserTag() {
+        return userTag;
+    }
+
+    public void setUserTag(String userTag) {
+        this.userTag = userTag;
     }
 }
