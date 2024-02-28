@@ -1,7 +1,6 @@
 package org.example.routineplanner.model;
 
 import jakarta.persistence.*;
-import org.example.routineplanner.TagDto;
 
 import java.util.UUID;
 
@@ -26,12 +25,6 @@ public class Tag {
 
     public Tag() {
 
-    }
-
-    public Tag(TagDto tagDto) {
-        name = tagDto.name();
-        color = tagDto.color();
-        iconId = tagDto.icon();
     }
 
     public UUID getId() {
