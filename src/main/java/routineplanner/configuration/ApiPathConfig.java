@@ -1,4 +1,4 @@
-package org.example.routineplanner.configuration;
+package routineplanner.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMapping;

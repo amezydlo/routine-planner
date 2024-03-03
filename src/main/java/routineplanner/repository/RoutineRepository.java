@@ -1,8 +1,8 @@
-package org.example.routineplanner.repositories;
+package routineplanner.repository;
 
-import org.example.routineplanner.controller.dto.RoutineHeaderDto;
-import org.example.routineplanner.model.Routine;
-import org.example.routineplanner.model.User;
+import routineplanner.controller.dto.RoutineHeaderDto;
+import routineplanner.model.Routine;
+import routineplanner.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

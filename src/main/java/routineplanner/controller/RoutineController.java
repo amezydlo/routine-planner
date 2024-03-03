@@ -1,10 +1,9 @@
-package org.example.routineplanner.controller;
+package routineplanner.controller;
 
 
-import org.example.routineplanner.controller.dto.RoutineHeaderDto;
-import org.example.routineplanner.model.Routine;
-import org.example.routineplanner.repositories.RoutineRepository;
-import org.example.routineplanner.services.RoutineService;
+import routineplanner.controller.dto.RoutineHeaderDto;
+import routineplanner.model.Routine;
+import routineplanner.service.RoutineService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

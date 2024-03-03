@@ -1,8 +1,8 @@
-package org.example.routineplanner.controller;
+package routineplanner.controller;
 
 
-import org.example.routineplanner.model.Tag;
-import org.example.routineplanner.services.TagService;
+import routineplanner.model.Tag;
+import routineplanner.service.TagService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

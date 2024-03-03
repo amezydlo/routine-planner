@@ -1,4 +1,4 @@
-package org.example.routineplanner.controller.exception_hanlders;
+package routineplanner.controller.exception_hanlders;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;

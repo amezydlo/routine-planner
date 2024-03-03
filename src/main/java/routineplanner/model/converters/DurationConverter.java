@@ -1,4 +1,4 @@
-package org.example.routineplanner.model.converters;
+package routineplanner.model.converters;
 
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;

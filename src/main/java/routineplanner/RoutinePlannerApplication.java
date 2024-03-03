@@ -1,4 +1,4 @@
-package org.example.routineplanner;
+package routineplanner;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

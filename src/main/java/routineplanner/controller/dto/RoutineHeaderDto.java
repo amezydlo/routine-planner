@@ -1,4 +1,4 @@
-package org.example.routineplanner.controller.dto;
+package routineplanner.controller.dto;
 
 import java.util.UUID;
 

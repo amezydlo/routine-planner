@@ -1,15 +1,19 @@
-package org.example.routineplanner.model;
+package routineplanner.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Data
+@NoArgsConstructor
 @Entity
-@Table(name = "my_user",uniqueConstraints = @UniqueConstraint(columnNames={"username", "userTag"}))
+@Table(name = "my_user", uniqueConstraints = @UniqueConstraint(columnNames = {"username", "userTag"}))
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -25,31 +29,5 @@ public class User {
     @JsonIgnoreProperties("user") // TODO warning
     private List<Routine> routines = new ArrayList<>();
 
-    public User() {
 
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getUserTag() {
-        return userTag;
-    }
-
-    public void setUserTag(String userTag) {
-        this.userTag = userTag;
-    }
 }

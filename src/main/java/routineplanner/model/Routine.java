@@ -1,14 +1,18 @@
-package org.example.routineplanner.model;
+package routineplanner.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Data
+@NoArgsConstructor
 @Entity
 @Table(name = "routine")
 public class Routine {
@@ -29,23 +33,4 @@ public class Routine {
     @JsonManagedReference
     private List<Routine_Day> routineDays = new ArrayList<>();
 
-
-    public Routine() {
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

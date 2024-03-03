@@ -1,13 +1,18 @@
-package org.example.routineplanner.model;
+package routineplanner.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.UUID;
 
+@Data
+@NoArgsConstructor
 @Entity
+@Table(name = "routine_day")
 public class Routine_Day {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -30,32 +35,4 @@ public class Routine_Day {
     @JsonBackReference
     private Routine routine;
 
-
-    public Routine_Day() {
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public int getDayNumber() {
-        return dayNumber;
-    }
-
-    public void setDayNumber(int dayNumber) {
-        this.dayNumber = dayNumber;
-    }
-
-
-    public Routine getRoutine() {
-        return routine;
-    }
-
-    public void setRoutine(Routine routine) {
-        this.routine = routine;
-    }
 }

@@ -1,10 +1,10 @@
-package org.example.routineplanner.services;
+package routineplanner.service;
 
 import jakarta.persistence.EntityNotFoundException;
-import org.example.routineplanner.controller.dto.RoutineHeaderDto;
-import org.example.routineplanner.model.Routine;
-import org.example.routineplanner.model.User;
-import org.example.routineplanner.repositories.RoutineRepository;
+import routineplanner.controller.dto.RoutineHeaderDto;
+import routineplanner.model.Routine;
+import routineplanner.model.User;
+import routineplanner.repository.RoutineRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

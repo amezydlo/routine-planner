@@ -1,13 +1,12 @@
-package org.example.routineplanner.services;
+package routineplanner.service;
 
 
 import jakarta.persistence.EntityNotFoundException;
-import org.example.routineplanner.model.Tag;
-import org.example.routineplanner.repositories.TagRepository;
+import routineplanner.model.Tag;
+import routineplanner.repository.TagRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.UUID;
 
 @Service
